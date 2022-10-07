@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Post JSON to Server</title>
+	<script>
+		function send() {
+			var id = document.getElementById("id").value
+			var content = document.getElementById("content").value
+            var date = document.getElementById("date").value
+			var important = document.getElementById("important").value
+			var result = document.getElementById("result")
+
+			const xhr = new XMLHttpRequest()
+
+			// create a JSON object
+			const json = {
+				id: id,
+				content: content,
+                date: date,
+				important: important
+			}
+
+			// open request
+			xhr.open("POST", "/api/notes");
+
+			// set `Content-Type` header
+			xhr.setRequestHeader("Content-Type",
+								"application/json");
+
+			// send request with JSON payload
+			xhr.send(JSON.stringify(json));
+		}
+	</script>
+</head>
+
+<body>
+	<h1 style="color: green">Create a note</h1>
+	<input type="text" id="id" placeholder="Name" />
+	<input type="text" id="content" placeholder="Note" />
+    <input type="text" id="date" placeholder="Date" />
+	<input type="text" id="important" placeholder="true or false" />
+	<button onclick="send()">Send</button>
+</body>
+</html>

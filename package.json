@@ -1,0 +1,19 @@
+{
+  "name": "backend-webserver",
+  "version": "1.0.0",
+  "description": "backend for a simple web server ",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "start": "node index.js",
+    "test": "none"
+  },
+  "author": "gouri",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
